@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import Loading from "./Loading";
-
 import IMG from '../assets/2152493.JPG'
 import { CartContext } from "./Context/CartContext";
 import { wishContext } from "./Context/WishContext";

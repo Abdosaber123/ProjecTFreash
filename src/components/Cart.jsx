@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Loading from "./Loading";
-import IMG from "../assets/basket_shopping_3d_render_18.JPG";
+import img from "../assets/bassket.JPG";
 import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "./Context/CartContext";
@@ -28,7 +28,7 @@ export default function Cart({ prod }) {
   if (!numOfCartItems)
     return (
       <div className="flex mt-32 justify-center items-center ">
-        <img src={IMG} className=" sm:w-[70%] lg:w-[50%]" alt="" />
+        <img src={img} className=" sm:w-[70%] lg:w-[50%]" alt="" />
       </div>
     );
 
