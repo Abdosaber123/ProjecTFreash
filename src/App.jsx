@@ -24,28 +24,30 @@ import ResetPassword from './components/ResetPassword';
 import GatogresDetails from './GatogresDetails';
 
 export default function App() {
-  const router = createBrowserRouter ([
-    {path: '/' , element: <Layout></Layout> , children:[
-      {path:'/home' , element: <Suspense fallback={<Loading></Loading>}><Home></Home></Suspense>},
-      {index:true , element: <Suspense fallback={<Loading></Loading>}><Login></Login></Suspense>},
-      {path: '/gatagores' , element: <Suspense fallback={<Loading></Loading>}><GategoresPage></GategoresPage></Suspense>},
-      {path: '/products' , element: <Products></Products>},
-      {path: '/productsdetails/:id/:catid/', element: <ProductsDetails></ProductsDetails>},
-      {path: '/prands' , element: <Suspense fallback={<Loading></Loading>}> <Brand></Brand> </Suspense>},
-      {path: '/register' , element: <Register></Register>},
-      {path: '/cart' , element: <Gardcomponent><Cart></Cart></Gardcomponent>},
-      {path: '*' , element: <Notfound></Notfound>},
-      {path: '/allorders' , element: <Orders></Orders>},
-      {path: '/payment' , element: <Payment></Payment>},
-      {path: '/wish' , element: <Wish></Wish>},
-      {path: '/prandDetails/:id' , element: <PrandDetails></PrandDetails>},
-      {path: '/gatagores/:id' , element: <GatogresDetails></GatogresDetails>},
-      {path: '/forget' , element: <ForgetPassword></ForgetPassword>},
-      {path: '/verialcode' , element: <Vierialcode></Vierialcode>},
-      {path: '/resetpassword' , element: <ResetPassword></ResetPassword>},
+  const router = createBrowserRouter([
+    {
+      path: '/', element: <Layout></Layout>, children: [
+        { path: '/home', element: <Suspense fallback={<Loading></Loading>}><Gardcomponent><Home></Home></Gardcomponent></Suspense> },
+        { index: true, element: <Suspense fallback={<Loading></Loading>}><Login></Login></Suspense> },
+        { path: '/gatagores', element: <Suspense fallback={<Loading></Loading>}><Gardcomponent><GategoresPage></GategoresPage></Gardcomponent></Suspense> },
+        { path: '/products', element: <Products></Products> },
+        { path: '/productsdetails/:id/:catid/', element: <Gardcomponent><ProductsDetails></ProductsDetails></Gardcomponent> },
+        { path: '/prands', element: <Suspense fallback={<Loading></Loading>}> <Gardcomponent><Brand></Brand></Gardcomponent> </Suspense> },
+        { path: '/register', element: <Register></Register> },
+        { path: '/cart', element: <Gardcomponent><Cart></Cart></Gardcomponent> },
+        { path: '*', element: <Notfound></Notfound> },
+        { path: '/allorders', element: <Gardcomponent><Orders></Orders></Gardcomponent> },
+        { path: '/payment', element: <Gardcomponent><Payment></Payment></Gardcomponent> },
+        { path: '/wish', element: <Gardcomponent><Wish></Wish></Gardcomponent> },
+        { path: '/prandDetails/:id', element: <Gardcomponent><PrandDetails></PrandDetails></Gardcomponent> },
+        { path: '/gatagores/:id', element: <GatogresDetails></GatogresDetails> },
+        { path: '/forget', element: <ForgetPassword></ForgetPassword> },
+        { path: '/verialcode', element: <Vierialcode></Vierialcode> },
+        { path: '/resetpassword', element: <ResetPassword></ResetPassword> },
 
 
-    ]}
+      ]
+    }
   ])
   return (
     <div className='imageBg'>

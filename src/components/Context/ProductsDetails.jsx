@@ -53,7 +53,7 @@ export default function ProductsDetails() {
         return <Loading></Loading>
     return (
     <div className='container'>
-        <div className='lg:flex lg:items-center lg:justify-center'>
+        <div className='lg:flex lg:items-center lg:justify-center mt-5'>
         <div className=' lg:w-1/3 '>
             <img src={ImageSrc? ImageSrc:productObj.imageCover} className='w-[70%] mx-auto lg:w-full ' alt="" />
             <div className=" w-[40%] md:gap-1  mx-auto gap-4  flex flex-row items-center justify-center">
@@ -71,12 +71,12 @@ export default function ProductsDetails() {
         <span> <i className="fa-solid fa-star text-yellow-300 "></i> {productObj.ratingsQuantity}</span>
         </div>
         <button onClick={()=>{addToCart(productObj._id)}} className='w-full bg-green-500 py-2 px-5 text-white mt-5 rounded-lg'>Add Cart</button>
-
+                  
         </div>
         </div>
-        <h2></h2>
-       <div className="row mb-4">
-        <div className="flex flex-wrap">
+       
+       <div className="row mb-4 border-t-2 mt-3 mb-3">
+        <div className="flex flex-wrap ">
         {detailstoinfo.length? detailstoinfo.map(prod =><ProductsItem key={prod._id} prod={prod}></ProductsItem>): <Loading></Loading> }
         </div>
         

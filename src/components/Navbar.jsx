@@ -42,21 +42,15 @@ export default function Navbar() {
     <div className=" ">
       <nav className="bg-white border-gray-200 dark:bg-gray-900 cursor-pointer fixed  top-0 left-0 z-10 right-0 mb-6 py-3">
         <div className="max-w-screen-xl  flex flex-wrap items-center  justify-between  mx-auto p-4">
-          {isLogin ? (
-            <Link
-              to="/"
-              className="flex items-center w-[20%] space-x-3 rtl:space-x-reverse"
-            >
-              <img src={logo} className="h-8 " alt="Flowbite Logo" />
-            </Link>
-          ) : (
+          
             <Link
               to="/home"
               className="flex items-center w-[20%] space-x-3 rtl:space-x-reverse"
             >
               <img src={logo} className="h-8 " alt="Flowbite Logo" />
             </Link>
-          )}
+          
+           
           <button
             data-collapse-toggle="navbar-default"
             type="button"
@@ -172,7 +166,7 @@ export default function Navbar() {
                       {" "}
                       <i className="fa-solid fa-cart-shopping   dark:text-white text-3xl">
                         {" "}
-                        <span className="text-[10px] dark:text-white text-white sm:-top-2 sm:left-10 md:left-10 lg:left-7 md:-top-2 lg:-top-5 -top-4   left-5 absolute bg-[#4FA74F] px-3 rounded-md ">
+                        <span className="text-[10px] dark:text-white text-white md:left-11 lg:left-7 md:-top-1 lg:-top-2 -top-2   left-11 absolute bg-[#4FA74F] px-3 rounded-md ">
                           {numOfCartItems}
                         </span>{" "}
                       </i>{" "}
@@ -182,7 +176,7 @@ export default function Navbar() {
                     {" "}
                     <li className="hover:bg-gray-100 lg:hover:bg-transparent sm:py-2 px-3">
                       {" "}
-                      <i className="fa-solid fa-heart text-2xl relative mt-5 lg:mt-0  ">
+                      <i className="fa-solid fa-heart text-3xl relative mt-5 lg:mt-0  ">
                         {" "}
                         <span className="text-[10px] text-white  -top-5    absolute bg-[#4FA74F] px-3 rounded-md left-3   ">
                           {wishCount}
@@ -260,7 +254,7 @@ export default function Navbar() {
               </li> */}
             </ul>
           </div>
-        </div>
+        </div> 
       </nav>
     </div>
   );

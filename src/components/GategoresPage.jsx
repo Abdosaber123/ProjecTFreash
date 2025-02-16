@@ -19,7 +19,7 @@ export default function GategoresPage() {
     <div className='container '>
         <div className="flex lg:ml-36 lg:justify-start justify-center gap-4 flex-wrap mt-28 ">
         {data?.data?.data.map(prdo=> 
-            <Link to={`/gatagores/${prdo._id}`} className='w-1/3 lg:w-1/4 lg:flex-col    '>
+            <Link to={`/gatagores/${prdo._id}`} className='md:w-1/3 lg:w-1/4 lg:flex-col    '>
                 <div className=" border-2 rounded-2xl hover:shadow-2xl ">
                 <img src={prdo.image} className='h-[300px]  w-full object-cover' alt="" />
                 <p className='py-5 text-center text-2xl text-[#C89167] font-bold border-t-2'>{prdo.name}</p>

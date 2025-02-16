@@ -42,7 +42,7 @@ let {addToWish , isLoading} = useContext(wishContext)
   // if(isError | errorWish)
   //   toast.error(error?.response?.data?.message)
   return (
-    <div className=" product w-1/2   md:w-1/3 lg:w-1/4 flex flex-col dark:bg-gray-900 hover:shadow-xl dark:text-white  p-10 ">
+    <div className=" product    md:w-1/3 lg:w-1/4 flex flex-col dark:bg-gray-900 hover:shadow-xl dark:text-white  p-10 ">
 <button
         onClick={() => {
           addToWish(prod.id);
