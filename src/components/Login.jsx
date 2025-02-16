@@ -27,7 +27,7 @@ export default function Login() {
         localStorage.getItem('username')
         localStorage.setItem("token", data.token);
         setLogin(data.token);
-        Navigate("/home");
+        Navigate("/");
       }
     } catch (error) {
       setLoadin(false);

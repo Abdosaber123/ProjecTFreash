@@ -36,7 +36,7 @@ export default function Navbar() {
   function logout() {
     localStorage.removeItem("token");
     setLogin(null);
-    Navigate("/");
+    Navigate("/login");
   }
   return (
     <div className=" ">
@@ -44,14 +44,14 @@ export default function Navbar() {
         <div className="max-w-screen-xl  flex flex-wrap items-center  justify-between  mx-auto p-4">
           {isLogin ? (
             <Link
-              to="/home"
+              to="/"
               className="flex items-center w-[20%] space-x-3 rtl:space-x-reverse"
             >
               <img src={logo} className="h-8 " alt="Flowbite Logo" />
             </Link>
           ) : (
             <Link
-              to="/"
+              to="/login"
               className="flex items-center w-[20%] space-x-3 rtl:space-x-reverse"
             >
               <img src={logo} className="h-8 " alt="Flowbite Logo" />
@@ -89,7 +89,7 @@ export default function Navbar() {
               {isLogin && (
                 <li>
                   <Link
-                    to="/home"
+                    to="/"
                     className="block py-3 px-3 text-black  rounded lg:bg-blue hover:bg-gray-100  lg:py-1 transition-all delay-200 hover:text-blue-700  lg:hover:text-black"
                     aria-current="page"
                   >
@@ -220,7 +220,7 @@ export default function Navbar() {
                 <>
                   <li>
                     <Link
-                      to="/"
+                      to="/login"
                       className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
                     >
                       Login

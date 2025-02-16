@@ -17,23 +17,23 @@ let Navigate = useNavigate()
         
         // console.log(data.data.response.data.message);   
         // console.log(email.email);
-        Navigate('/')
+        // Navigate('/')
         setLogin(data.token) 
             console.log('hi token');
             
             localStorage.setItem('token' , data.token)
-            Navigate('/home')
+            Navigate('/')
             toast.success('Success Reset The Password')
         
-        if(formik.values.email === email.email){
-            setLogin(data.token) 
-            console.log('hi token');
+        // if(formik.values.email === email.email){
+        //     setLogin(data.token) 
+        //     console.log('hi token');
             
-            localStorage.setItem('token' , data.token)
-            Navigate('/home')
-            toast.success('Success Reset The Password')
+        //     localStorage.setItem('token' , data.token)
+        //     Navigate('/')
+        //     toast.success('Success Reset The Password')
             
-          }
+        //   }
         
         } catch (error) {
           console.log(error.response.data.message);

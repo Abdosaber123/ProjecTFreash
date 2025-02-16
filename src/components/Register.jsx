@@ -23,7 +23,7 @@ export default function Register() {
         setLogin(data.token) 
         localStorage.setItem('username' , formik.values.name)
         localStorage.setItem('token' , data.token)
-        Navigate('/home')
+        Navigate('/')
       }
     } catch (error) {
       setLoadin(false)

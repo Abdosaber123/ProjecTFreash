@@ -24,10 +24,10 @@ import ResetPassword from './components/ResetPassword';
 import GatogresDetails from './GatogresDetails';
 
 export default function App() {
-  const router = createHashRouter ([
+  const router = createBrowserRouter ([
     {path: '/' , element: <Layout></Layout> , children:[
-      {path:'/home' , element: <Suspense fallback={<Loading></Loading>}><Home></Home></Suspense>},
-      {index:true , element: <Suspense fallback={<Loading></Loading>}><Login></Login></Suspense>},
+      {index:true , element: <Suspense fallback={<Loading></Loading>}><Home></Home></Suspense>},
+      {path:'/login' , element: <Suspense fallback={<Loading></Loading>}><Login></Login></Suspense>},
       {path: '/gatagores' , element: <Suspense fallback={<Loading></Loading>}><GategoresPage></GategoresPage></Suspense>},
       {path: '/products' , element: <Products></Products>},
       {path: '/productsdetails/:id/:catid/', element: <ProductsDetails></ProductsDetails>},
