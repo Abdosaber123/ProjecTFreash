@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import logo from "../assets/freshcart-logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { userToken } from "./Context/UserTokenPorvider";
-
-import { numItem } from "./Context/NumCartOfText";
 import { CartContext } from "./Context/CartContext";
 import { wishContext } from "./Context/WishContext";
 

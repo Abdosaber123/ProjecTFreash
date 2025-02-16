@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Loading from "./Loading";
-import img from "../assets/bassket.JPG";
+import img from "../assets/bassket.jpg";
 import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "./Context/CartContext";

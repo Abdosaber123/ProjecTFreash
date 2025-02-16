@@ -1,10 +1,10 @@
 import React from 'react'
 import Slider from "react-slick";
-import img1 from '../assets/images/slider-image-1.JPEG'
-import img2 from '../assets/images/slider-image-2.JPEG'
-import img3 from '../assets/images/slider-image-3.JPEG'
-import img4 from '../assets/blog-img-1.JPEG'
-import img5 from '../assets/blog-img-2.JPEG'
+import img1 from '../assets/images/slider-image-1.jpeg'
+import img2 from '../assets/images/slider-image-2.jpeg'
+import img3 from '../assets/images/slider-image-3.jpeg'
+import img4 from '../assets/blog-img-1.jpeg'
+import img5 from '../assets/blog-img-2.jpeg'
 import { Helmet } from 'react-helmet';
 export default function HomeSlider() {
 

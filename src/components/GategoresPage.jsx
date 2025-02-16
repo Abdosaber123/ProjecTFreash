@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-import React, { useState } from 'react'
 import Loading from './Loading'
 import { Link } from 'react-router-dom'
 
