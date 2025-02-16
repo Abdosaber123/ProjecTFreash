@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.toggle-checkbox:checked {
+    @apply: right-0 border-green-400;
+    right: 0;
+    border-color: #68D391;
+  }
+  .toggle-checkbox:checked + .toggle-label {
+    @apply: bg-green-400;
+    background-color: #68D391;
+  }
+  .product .cartAdd{
+    background-color: green;
+    border-radius: 10px;
+    transform: translateY(80px);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    opacity: 0;
+  }
+  .product:hover .cartAdd{
+    transform: translateY(0px);
+    opacity: 100;
+    
+    
+  }
+  .product .cartAdd:hover{
+    background-color: #479647;
+  }
+  .footer input{
+    width: 80%;
+  }
+  .paymentPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .paymentPage input{
+    width: 750px;
+    border-radius: 10px;
+  }
+  /* .product:hover{
+    border: 3px solid yellow;
+    transition: all 0.3s ease;
+    
+
+  } */
+
+  
