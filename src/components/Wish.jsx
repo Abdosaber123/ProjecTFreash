@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import Loading from "./Loading";
-import IMG from '../assets/2152493.JPG'
+import img from '../assets/nothing.JPG'
 import { CartContext } from "./Context/CartContext";
 import { wishContext } from "./Context/WishContext";
 
@@ -34,7 +34,7 @@ export default function Wish() {
         <div className="flex flex-col items-center bg-[#F0F3F2] py-16 ">
           <p className="mt-28 text-[50px] mb-3 text-[#36B737] font-bold">This WishList is empty</p>
 
-          <img src={IMG} className="w-[40%]" alt="" />
+          <img src={img} className="w-[40%]" alt="" />
         </div>
       </div>
 
