@@ -43,6 +43,27 @@ let {addToWish , isLoading} = useContext(wishContext)
   //   toast.error(error?.response?.data?.message)
   return (
     <div className=" product w-1/2   md:w-1/3 lg:w-1/4 flex flex-col dark:bg-gray-900 hover:shadow-xl dark:text-white  p-10 ">
+<button
+        onClick={() => {
+          addToWish(prod.id);
+        }}
+        className="text-end text-2xl hover:text-red-800 mb-3"
+      >
+        {" "}
+        <p
+          onClick={() => {
+            setOpen(!isOpen);
+          }}
+        >
+          {" "}
+          {isOpen ? (
+            <i className="fa-solid fa-heart"></i>
+          ) : (
+            <i className="fa-regular fa-heart"></i>
+          )}{" "}
+        </p>{" "}
+      </button>
+
       <Link to={`/productsdetails/${prod.id}/${prod.category._id}`}>
         <img src={prod.imageCover} className="w-full" alt="" />
         <p className="font-sm font-bold text-green-600">
@@ -66,31 +87,12 @@ let {addToWish , isLoading} = useContext(wishContext)
           </span>
         </div>
       </Link>
-      <button
-        onClick={() => {
-          addToWish(prod.id);
-        }}
-        className="text-end text-2xl hover:text-red-800"
-      >
-        {" "}
-        <p
-          onClick={() => {
-            setOpen(!isOpen);
-          }}
-        >
-          {" "}
-          {isOpen ? (
-            <i className="fa-solid fa-heart"></i>
-          ) : (
-            <i className="fa-regular fa-heart"></i>
-          )}{" "}
-        </p>{" "}
-      </button>
+      
       <button
         onClick={() => {
           addToCart(prod.id);
         }}
-        className="relative inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-2 text-sm font-semibold shadow-sm transition-all duration-300 hover:from-green-500 hover:to-green-600 hover:shadow-lg hover:-translate-y-0.5"
+        className="relative mt-2 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-2 text-sm font-semibold shadow-sm transition-all duration-300 hover:from-green-500 hover:to-green-600 hover:shadow-lg hover:-translate-y-0.5"
       >
         {updaingItem === prod._id ? (
           <Loader className="w-4 h-4 animate-spin text-white" />

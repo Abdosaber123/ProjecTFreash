@@ -7,5 +7,5 @@ export default function  Gardcomponent({ children }) {
         return children 
 
     else
-    return <Navigate to={'/login'}></Navigate>
+    return <Navigate to={'/'}></Navigate>
 }

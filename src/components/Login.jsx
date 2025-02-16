@@ -1,13 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import {  useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { userToken } from "./Context/UserTokenPorvider";
 import { Helmet } from "react-helmet";
+import Loading from "./Loading";
 export default function Login() {
   let Navigate = useNavigate();
-
+  let [loading , setLoadingapi] = useState(false)
   let [loadingSpn, setLoadin] = useState(false);
   let [errorMsg, setError] = useState("");
 
@@ -15,6 +16,7 @@ export default function Login() {
   async function hundelLogin(value) {
     setLoadin(true);
     try {
+      setLoadingapi(true)
       let { data } = await axios.post(
         `https://ecommerce.routemisr.com/api/v1/auth/signin`,
         value
@@ -27,14 +29,24 @@ export default function Login() {
         localStorage.getItem('username')
         localStorage.setItem("token", data.token);
         setLogin(data.token);
-        Navigate("/");
+        Navigate("/home");
       }
     } catch (error) {
-      setLoadin(false);
+      
       setError("Your email pr password is correct  ");
+    }finally{
+      setLoadingapi(false)
+      setLoadin(false);
     }
+  } 
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
+      Navigate('/home')
+    }
+  },[])
+  if(loading){
+    <Loading></Loading>
   }
-
   let validationSchema = Yup.object().shape({
     /// password /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
     email: Yup.string().required("Required").email("Email Not Valid"),

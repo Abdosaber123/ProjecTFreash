@@ -36,7 +36,7 @@ export default function Navbar() {
   function logout() {
     localStorage.removeItem("token");
     setLogin(null);
-    Navigate("/login");
+    Navigate("/");
   }
   return (
     <div className=" ">
@@ -51,7 +51,7 @@ export default function Navbar() {
             </Link>
           ) : (
             <Link
-              to="/login"
+              to="/home"
               className="flex items-center w-[20%] space-x-3 rtl:space-x-reverse"
             >
               <img src={logo} className="h-8 " alt="Flowbite Logo" />
@@ -89,7 +89,7 @@ export default function Navbar() {
               {isLogin && (
                 <li>
                   <Link
-                    to="/"
+                    to="/home"
                     className="block py-3 px-3 text-black  rounded lg:bg-blue hover:bg-gray-100  lg:py-1 transition-all delay-200 hover:text-blue-700  lg:hover:text-black"
                     aria-current="page"
                   >
@@ -168,11 +168,11 @@ export default function Navbar() {
                 <>
                   <Link to={"/cart"}>
                     {" "}
-                    <li className="hover:bg-gray-100 lg:hover:bg-transparent sm:py-2 px-3">
+                    <li className="hover:bg-gray-100  lg:hover:bg-transparent sm:py-2 px-3">
                       {" "}
-                      <i className="fa-solid fa-cart-shopping dark:text-white text-3xl">
+                      <i className="fa-solid fa-cart-shopping   dark:text-white text-3xl">
                         {" "}
-                        <span className="text-[10px] dark:text-white text-white sm:-top-2 sm:left-10 md:left-7 md:-top-5  -top-4   left-5 absolute bg-[#4FA74F] px-3 rounded-md ">
+                        <span className="text-[10px] dark:text-white text-white sm:-top-2 sm:left-10 md:left-10 lg:left-7 md:-top-2 lg:-top-5 -top-4   left-5 absolute bg-[#4FA74F] px-3 rounded-md ">
                           {numOfCartItems}
                         </span>{" "}
                       </i>{" "}
@@ -209,7 +209,7 @@ export default function Navbar() {
                   )}
                   <li onClick={logout}>
                     <Link
-                      href="#"
+                      
                       className="block py-2 px-3  text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
                     >
                       <span><i className="fa-solid mr-2    fa-arrow-right-from-bracket"></i>Log Out</span>
@@ -220,7 +220,7 @@ export default function Navbar() {
                 <>
                   <li>
                     <Link
-                      to="/login"
+                      to="/"
                       className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
                     >
                       Login

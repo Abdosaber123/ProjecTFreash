@@ -53,16 +53,16 @@ export default function ProductsDetails() {
         return <Loading></Loading>
     return (
     <div className='container'>
-        <div className='flex items-center justify-center'>
-        <div className='w-1/3 '>
-            <img src={ImageSrc? ImageSrc:productObj.imageCover} className='w-full ' alt="" />
-            <div className="flex items-center justify-center">
-                {productObj?.images?.map((img,index)=><img src={img} index={index} onClick={getImage} className={`w-[20%] mt-4 transition-all cursor-pointer' alt='details
+        <div className='lg:flex lg:items-center lg:justify-center'>
+        <div className=' lg:w-1/3 '>
+            <img src={ImageSrc? ImageSrc:productObj.imageCover} className='w-[70%] mx-auto lg:w-full ' alt="" />
+            <div className=" w-[40%] md:gap-1  mx-auto gap-4  flex flex-row items-center justify-center">
+                {productObj?.images?.map((img,index)=><img src={img} index={index} onClick={getImage} className={`w-[20%] lg:w-[30%] mt-4 transition-all cursor-pointer' alt='details
                     ${index==ind?"border-4 border-green-500 opacity-100" :"opacity-50" }
                  `}/>)}
             </div>
         </div>
-        <div className='w-2/3 p-16'>
+        <div className=' w-2/1 lg:w-2/3 p-16'>
         <h2 className='text-[30px] font-bold'> {productObj.title} </h2>
         <p className='font-semibold mt-5 opacity-45'>{productObj.description}</p>
         <p className='mt-5  text-[25px] font-bold'>{productObj?.category?.name}</p>

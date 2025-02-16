@@ -11,7 +11,7 @@ export default function Home() {
   let {isLogin} = useContext(userToken)
   let navi = useNavigate()
   if(isLogin == null){
-    navi('/login')
+    navi('/')
   }
 
   
