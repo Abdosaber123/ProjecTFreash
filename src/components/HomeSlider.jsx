@@ -20,7 +20,7 @@ export default function HomeSlider() {
     
       };
   return (
-    <div className='container hidden md:flex py-4   '>
+    <div className='container hidden md:flex py-4 mt-5   '>
         <div className="w-2/3 ">
       <Slider {...settings}>
         <img src={img1} className='h-[500px] object-cover' alt="" />

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userToken } from "./Context/UserTokenPorvider";
 import { CartContext } from "./Context/CartContext";
 import { wishContext } from "./Context/WishContext";
+import { initFlowbite } from "flowbite";
 
 export default function Navbar() {
 
@@ -12,7 +13,7 @@ export default function Navbar() {
   let { isLogin, setLogin } = useContext(userToken);
   let ref = useRef();
   let { wishCount } = useContext(wishContext);
-
+  const [isScroll , setScroll] = useState(false)
 
   const { numOfCartItems } = useContext(CartContext);
 
@@ -38,9 +39,21 @@ export default function Navbar() {
     setLogin(null);
     Navigate("/");
   }
+  const hundelscroll = ()=>{
+    console.log(window.scrollY);
+    if(window.scrollY > 15){
+      setScroll(true)
+    }else{
+      setScroll(false)
+    }
+  }
+  useEffect(()=>{
+    initFlowbite()
+  },[])
+  window.addEventListener("scroll" , hundelscroll)
   return (
     <div className=" ">
-      <nav className="bg-white border-gray-200 dark:bg-gray-900 cursor-pointer fixed  top-0 left-0 z-10 right-0 mb-6 py-3">
+      <nav className={` ${isScroll == true ? "py-1" : "py-5"} transition-[padding] duration-500 bg-slate-100 border-gray-200  cursor-pointer fixed  top-0 left-0 z-10 right-0 mb-6`}>
         <div className="max-w-screen-xl  flex flex-wrap items-center  justify-between  mx-auto p-4">
           
             <Link
