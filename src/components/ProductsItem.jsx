@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-import Loading from "./Loading";
 import { CartContext } from "./Context/CartContext";
 import { Loader, ShoppingCart } from 'lucide-react';
 import { wishContext } from "./Context/WishContext";
@@ -15,17 +14,17 @@ let {addToWish , isLoading} = useContext(wishContext)
 
 
 
-  if (isOpen)
-    toast.success(" Succsess Add To WishList  ", {
-      position: "top-right",
-      icon: "❤️",
-      style: {
-        background: "#51A351",
-        marginTop: "20px",
-        color: "white",
-        fontSize: "20px",
-      },
-    });
+  // if (isOpen)
+  //   toast.success(" Succsess Add To WishList  ", {
+  //     position: "top-right",
+  //     icon: "❤️",
+  //     style: {
+  //       background: "#51A351",
+  //       marginTop: "20px",
+  //       color: "white",
+  //       fontSize: "20px",
+  //     },
+  //   });
 
 
  

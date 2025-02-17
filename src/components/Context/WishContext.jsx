@@ -1,18 +1,30 @@
 import axios from 'axios'
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import { userToken } from './UserTokenPorvider'
+import toast from 'react-hot-toast'
 export let wishContext = createContext()
 export default function WishContextProvider({ children }) {
-    let token = localStorage.getItem('token')
-    // let [token , setToken] = useState(null)
     let [isLoading, setLoading] = useState(false)
     let [Wish, setWish] = useState(null)
-    let [isDelete , setDelete] = useState(false)
+    let [isDelete, setDelete] = useState(false)
     let [wishId, setWishId] = useState(null)
-    let [wishCount, setWishCount] = useState(0)
+    let [wishCount, setWishCount] = useState(0);
+    const { isLogin: token } = useContext(userToken);
     const [isCartLoading, setIsCartLoading] = useState(false);
 
 
-
+    function successMessage(msg) {
+        toast.success(msg, {
+          position: "top-right",
+          icon: "🛒",
+          style: {
+            background: "#51A351",
+            marginTop: "20px",
+            color: "white",
+            fontSize: "20px",
+          },
+        });
+      }
     async function getWish() {
         // if(!token) return
         setIsCartLoading(true)
@@ -43,14 +55,16 @@ export default function WishContextProvider({ children }) {
         try {
             setLoading(true)
             const { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/wishlist`, { productId }, { headers: { token } })
-                setWishCount(data.data.length)
-                if (data.status === 'success') {
-                    await getWish();
-                }
+            setWishCount(data.data.length)
+            if (data.status === 'success') {
+                await getWish();
+            }
+            successMessage("Succsess Add To WishList")
         } catch (error) {
-
-        }finally{
+            successMessage('')
+        } finally {
             setLoading(false)
+            
         }
 
 

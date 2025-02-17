@@ -13,19 +13,18 @@ import NumItemContextProvider from "./components/Context/NumCartOfText";
 import CartContextProvider from "./components/Context/CartContext.jsx";
 import WishContextProvider from "./components/Context/WishContext.jsx";
 
-
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
-  <WishContextProvider>
-  <CartContextProvider>
-    <NumItemContextProvider>
-      <QueryClientProvider client={queryClient}>
-        <UserTokenProvider>
-          <Toaster />
-          <App />
-        </UserTokenProvider>
-      </QueryClientProvider>
-    </NumItemContextProvider>
-  </CartContextProvider>
-  </WishContextProvider>
+  <UserTokenProvider>
+    <WishContextProvider>
+      <CartContextProvider>
+        <NumItemContextProvider>
+          <QueryClientProvider client={queryClient}>
+            <Toaster />
+            <App />
+          </QueryClientProvider>
+        </NumItemContextProvider>
+      </CartContextProvider>
+    </WishContextProvider>
+  </UserTokenProvider>
 );

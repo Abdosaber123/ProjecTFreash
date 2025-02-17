@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const testName = localStorage.getItem("username");
   let Navigate = useNavigate();
-  let { isLogin, setLogin } = useContext(userToken);
+  let { isLogin, setLogin, setUserId } = useContext(userToken);
   let ref = useRef();
   let { wishCount } = useContext(wishContext);
   const [isScroll , setScroll] = useState(false)
@@ -37,6 +37,7 @@ export default function Navbar() {
   function logout() {
     localStorage.removeItem("token");
     setLogin(null);
+    setUserId(null);
     Navigate("/");
   }
   const hundelscroll = ()=>{

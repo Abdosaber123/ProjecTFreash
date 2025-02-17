@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout';
 const Home = lazy(() => import('./components/Home'));
@@ -24,10 +24,11 @@ import ResetPassword from './components/ResetPassword';
 import GatogresDetails from './GatogresDetails';
 
 export default function App() {
+  
   const router = createBrowserRouter([
     {
       path: '/', element: <Layout></Layout>, children: [
-        { path: '/home', element: <Suspense fallback={<Loading></Loading>}><Gardcomponent><Home></Home></Gardcomponent></Suspense> },
+        { path: '/home', element:<Gardcomponent><Home></Home></Gardcomponent> },
         { index: true, element: <Suspense fallback={<Loading></Loading>}><Login></Login></Suspense> },
         { path: '/gatagores', element: <Suspense fallback={<Loading></Loading>}><Gardcomponent><GategoresPage></GategoresPage></Gardcomponent></Suspense> },
         { path: '/products', element: <Products></Products> },
