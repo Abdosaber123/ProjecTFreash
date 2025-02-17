@@ -10,7 +10,7 @@ let Navigate = useNavigate()
     async function reset(email){
         try {
           let {data} = await axios.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`,email)
-        console.log(email.email);
+    
         // console.log(data.token);
         // console.log(data);
         // console.log(formik.values.email);

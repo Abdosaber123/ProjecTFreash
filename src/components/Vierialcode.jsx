@@ -14,8 +14,7 @@ export default function Vierialcode() {
       setLoading(true)
         try {
           let {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode`,email)
-        console.log(email);
-        console.log(data);
+     
         // console.log(data.statusMsg);
         if(data.status =='Success')
           toast.success('Success Code')
@@ -23,7 +22,7 @@ export default function Vierialcode() {
             Navigae('/resetpassword')
         
         } catch (error) {
-          console.log(error);
+       
           setLoading(false)
           if(error?.response?.data?.message)
             toast.error(error?.response?.data?.message)

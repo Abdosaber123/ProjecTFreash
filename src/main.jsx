@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+
 import { createRoot } from "react-dom/client";
 import "../node_modules/flowbite/dist/flowbite.min.js";
 import "slick-carousel/slick/slick.css";
@@ -12,6 +12,7 @@ import { Toaster } from "react-hot-toast";
 import NumItemContextProvider from "./components/Context/NumCartOfText";
 import CartContextProvider from "./components/Context/CartContext.jsx";
 import WishContextProvider from "./components/Context/WishContext.jsx";
+
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(

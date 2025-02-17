@@ -21,7 +21,7 @@ export default function Login() {
         `https://ecommerce.routemisr.com/api/v1/auth/signin`,
         value
       );
-      console.log(value);
+    
       setLoadin(false);
       setError("");
       if (data.message === "success") {
@@ -64,8 +64,8 @@ export default function Login() {
   return (
     <div className="container ">
       {/* <h2 className="text-[1.5rem] font-bold mb-14 mt-9">Login :</h2> */}
-      <form className="max-w-md  mx-auto mt-40" onSubmit={formik.handleSubmit}>
-        <div className="relative z-0 w-full mb-5 group ">
+      <form className="max-w-md h-screen flex flex-col justify-center  mx-auto" onSubmit={formik.handleSubmit}>
+        <div className="relative z-0 w-full flex flex-col mb-5 group ">
           <input
             type="email"
             value={formik.values.email}

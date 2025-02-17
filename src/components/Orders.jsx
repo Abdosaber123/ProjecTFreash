@@ -12,7 +12,7 @@ export default function Orders() {
     await axios.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${userId}`)
       .then(({ data }) => {
 
-        console.log(data);
+       
 
         setOreder(data)
 
@@ -22,7 +22,7 @@ export default function Orders() {
     getOrder()
   }, [])
   
-  console.log(orders);
+ 
   return (
     <div className='mt-36'>
       <div className="container">

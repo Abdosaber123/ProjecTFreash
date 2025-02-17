@@ -12,7 +12,7 @@ export default function GategoresPage() {
         queryFn:getGategores,
     
       })
-      console.log(data?.data?.data);
+      
       if (isPending)
           return <Loading></Loading>;
   return (

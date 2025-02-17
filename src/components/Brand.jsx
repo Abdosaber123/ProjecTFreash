@@ -14,7 +14,7 @@ export default function Brand() {
     queryKey:['brands'],
     queryFn:getBrand
   })
-  // console.log(data?.data?.data);
+ 
   //DETAILS 
   let {id} = useParams
   async function getDetails(id){
@@ -24,7 +24,7 @@ export default function Brand() {
   return <Loading></Loading>
         
   function hi (){
-    console.log('hi');
+
     
   }
   return (

@@ -5,9 +5,10 @@ import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "./Context/CartContext";
 import { Loader, Minus, Plus, Trash } from "lucide-react";
+import Clear from "./Clear";
 
 export default function Cart({ prod }) {
-  let Navigate = useNavigate();
+
   let [isOpen, setOpen] = useState(false);
   let { removeFromCart, updaingItem } = useContext(CartContext);
 
@@ -18,6 +19,7 @@ export default function Cart({ prod }) {
     isCartLoading,
     totalCartPrice,
     clearCart,
+    clearLoad,
     upadeItemCount,
   } = useContext(CartContext);
 
@@ -32,15 +34,15 @@ export default function Cart({ prod }) {
       </div>
     );
 
-  if (isCartLoading) return <Loading></Loading>;
+  if (clearLoad) return <Clear></Clear>;
 
   return (
-    <div className="container  px-32  rounded-3xl">
+    <div className="container    rounded-3xl">
       <div className="relative overflow-x-auto shadow-md  sm:rounded-lg mt-10 bg-white p-5 dark:bg-gray-800  ">
-        <table className=" lg:w-full mt-16 text-sm text-left rtl:text-right text-gray-500  ">
+        <table className=" lg:w-full mt-16  text-sm text-left rtl:text-right text-gray-500  ">
           <p className="text-4xl text-black font-semibold mb-3 ">Shop Cart</p>
-          <div className="lg:flex lg:justify-center lg:gap-20 mt-8       ">
-            <h1 className=" mb-5 font-semibold text-yellow-500  sm:text-[16px] md:text-[30px]   ">
+          <div className="md:flex md:justify-center md:gap-20 mt-8  text-center     ">
+            <h1 className=" mb-5 font-semibold text-yellow-500   sm:text-[16px] md:text-[30px]   ">
               Total Cart: {numOfCartItems}{" "}
             </h1>
             <h1 className=" mb-3 font-semibold  text-yellow-300 sm:text-[16px] md:text-[30px] ">
@@ -55,16 +57,16 @@ export default function Cart({ prod }) {
                 className=" border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50  dark:hover:bg-gray-600"
               >
                 <td className="p-4 flex flex-col lg:flex-row items-center border-t-2 ">
-                  <div className=" ">
+                  <div className="flex justify-center ">
                     <img
                       src={prod?.product?.imageCover}
-                      className="lg:w-[100px]   max-h-full  rounded-2xl"
+                      className="lg:w-[100px] md:w-[40%]  max-h-full  rounded-2xl"
                       alt="Apple Watch"
                     />
                   </div>
                   <div className=" px-2 ">
-                    <p className="">{prod?.product?.title}</p>
-                    <p className="text-yellow-300  mt-2">
+                    <p className=" text-2xl">{prod?.product?.title}</p>
+                    <p className="text-yellow-300 text-2xl  mt-3">
                       {" "}
                       Price: {prod?.price} EGP
                     </p>
@@ -72,7 +74,7 @@ export default function Cart({ prod }) {
                 </td>
 
                 <td className="px-6 py-4">
-                  <div className="flex items-center gap-3">
+                  <div className="flex md:flex-row flex-col items-center gap-3">
                     <Minus
                       onClick={() => {
                         upadeItemCount({
@@ -106,14 +108,14 @@ export default function Cart({ prod }) {
             ))}
           </tbody>
         </table>
-        <div className=" flex justify-between items-center p-3 mt-4 lg:px-10">
+        <div className="flex-col flex md:flex-row justify-between items-center p-3 mt-4 lg:px-10">
           
           <Link to='/payment' className="bg-[#0AAE0A] p-3  text-white text-xl font-bold rounded-2xl">
           Payment <span><i className="fa-brands text-2xl fa-cc-mastercard"></i></span>
         </Link>
         <button
             onClick={clearCart}
-            className="bg-red-500 p-3  text-white text-xl rounded-2xl font-bold">
+            className="bg-red-500 p-3 mt-6 md:mt-0 text-white text-xl rounded-2xl font-bold">
             {" "}
             Clear ALL <span className="hover:text-red-600 transition-all" ><i className="fa-solid fa-trash"></i></span>
           </button>

@@ -6,15 +6,16 @@ export default function WishContextProvider({ children }) {
     // let [token , setToken] = useState(null)
     let [isLoading, setLoading] = useState(false)
     let [Wish, setWish] = useState(null)
+    let [isDelete , setDelete] = useState(false)
     let [wishId, setWishId] = useState(null)
     let [wishCount, setWishCount] = useState(0)
-
+    const [isCartLoading, setIsCartLoading] = useState(false);
 
 
 
     async function getWish() {
         // if(!token) return
-        setLoading(true)
+        setIsCartLoading(true)
         await axios.get(`https://ecommerce.routemisr.com/api/v1/wishlist`,
             { headers: { token } }
         )
@@ -32,7 +33,7 @@ export default function WishContextProvider({ children }) {
                 setWishCount(0)
             }).finally(() => {
                 setWishId(null)
-                setLoading(false)
+                setIsCartLoading(false)
 
             })
 
@@ -56,7 +57,7 @@ export default function WishContextProvider({ children }) {
     }
     async function deleteWish(productId) {
         try {
-            setLoading(true);
+            setDelete(true);
             const { data } = await axios.delete(
                 `https://ecommerce.routemisr.com/api/v1/wishlist/${productId}`,
                 { headers: { token } }
@@ -66,7 +67,7 @@ export default function WishContextProvider({ children }) {
                 await getWish();
             }
         } finally {
-            setLoading(false);
+            setDelete(false);
         }
     }
     useEffect(() => {
@@ -82,6 +83,8 @@ export default function WishContextProvider({ children }) {
             addToWish,
             isLoading,
             deleteWish,
+            isDelete,
+            isCartLoading,
 
 
 

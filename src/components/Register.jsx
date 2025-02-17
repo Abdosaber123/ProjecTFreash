@@ -16,7 +16,7 @@ export default function Register() {
     setLoadin(true)
     try {
       let {data} = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`,value)
-      console.log(value);
+    
       setLoadin(false)
       setError('')
       if(data.message==='success'){
@@ -53,12 +53,12 @@ export default function Register() {
   });
 
   
-
+  //h-screen flex flex-col justify-center
   return (
     <div className="container ">
-      <h2 className="text-[1.5rem] font-bold mb-14">Register</h2>
-      <form className="max-w-md  mx-auto" onSubmit={formik.handleSubmit}>
-        <div className="relative z-0 w-full mb-5 group">
+    
+      <form className="max-w-md h-screen flex flex-col justify-center  mx-auto" onSubmit={formik.handleSubmit}>
+        <div className="relative z-0   w-full mb-5 group">
         <input
             type="text"
           value={formik.values.name}

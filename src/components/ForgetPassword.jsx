@@ -13,15 +13,14 @@ let Navigae = useNavigate()
    setLoading(true)
     try {
       let {data , isLoading } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`,email)
-    // console.log(email);
-    console.log(data);
-    console.log(data.statusMsg);
+ 
+   
     if(data.statusMsg =='success')
       Navigae('/verialcode')
     if(data.message)
       toast.success(data.message)
     } catch (error) {
-      console.log(error?.response?.data?.message);
+      
       setLoading(false)
       if(error?.response?.data?.message)
         toast.error(error?.response?.data?.message)

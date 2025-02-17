@@ -14,7 +14,7 @@ export default function PrandDetails() {
         queryKey:['brand'] ,
         queryFn:getDetails
       })
-      console.log(data?.data?.data);
+   
   return (
     <div className='py-20 mt-9 text-center'>
       <Link to={'/prands'} className='py-2 font-medium   bg-black text-white text-2xl rounded-lg mt-9 px-3 '> Go Back</Link>

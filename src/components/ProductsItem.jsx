@@ -13,7 +13,7 @@ let {addToWish , isLoading} = useContext(wishContext)
   // let [title , imageCover , price , category  ] = prod
 
 
-  if (isLoading) return <Loading></Loading>;
+
 
   if (isOpen)
     toast.success(" Succsess Add To WishList  ", {
@@ -27,22 +27,10 @@ let {addToWish , isLoading} = useContext(wishContext)
       },
     });
 
-  // if(!isOpen){
-  //   toast.error('Success Romove WishList' ,{
-  //     position:'top-right' ,
-  //     icon:'❤️' ,
-  //     style:{
-  //       background: 'red',
-  //       marginTop:'20px',
-  //       color:"white",
-  //       fontSize:'20px'
-  //     }
-  //   })
-  // }
-  // if(isError | errorWish)
-  //   toast.error(error?.response?.data?.message)
+
+ 
   return (
-    <div className=" product px-20    md:w-1/3 lg:w-1/4 flex flex-col dark:bg-gray-900 hover:shadow-xl dark:text-white  md:p-10 ">
+    <div className=" product  p-5   md:w-1/3 lg:w-1/4 flex flex-col dark:bg-gray-900 hover:shadow-xl dark:text-white  md:p-10 ">
 <button
         onClick={() => {
           addToWish(prod.id);
@@ -92,7 +80,7 @@ let {addToWish , isLoading} = useContext(wishContext)
         onClick={() => {
           addToCart(prod.id);
         }}
-        className="relative mt-2 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-2 text-sm font-semibold shadow-sm transition-all duration-300 hover:from-green-500 hover:to-green-600 hover:shadow-lg hover:-translate-y-0.5"
+        className="relative mt-2 mb-5  inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-2 text-sm font-semibold shadow-sm transition-all duration-300 hover:from-green-500 hover:to-green-600 hover:shadow-lg hover:-translate-y-0.5"
       >
         {updaingItem === prod._id ? (
           <Loader className="w-4 h-4 animate-spin text-white" />

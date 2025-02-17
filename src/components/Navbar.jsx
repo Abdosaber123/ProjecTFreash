@@ -24,7 +24,7 @@ export default function Navbar() {
     }
   }, []);
   function changeDark() {
-    console.log(ref.current.checked);
+    
     let body = document.body;
     if (ref.current.checked) {
       body.classList.add("dark");
@@ -40,7 +40,7 @@ export default function Navbar() {
     Navigate("/");
   }
   const hundelscroll = ()=>{
-    console.log(window.scrollY);
+    
     if(window.scrollY > 15){
       setScroll(true)
     }else{
@@ -53,12 +53,12 @@ export default function Navbar() {
   window.addEventListener("scroll" , hundelscroll)
   return (
     <div className=" ">
-      <nav className={` ${isScroll == true ? "py-1" : "py-5"} transition-[padding] duration-500 bg-slate-100 border-gray-200  cursor-pointer fixed  top-0 left-0 z-10 right-0 mb-6`}>
-        <div className="max-w-screen-xl  flex flex-wrap items-center  justify-between  mx-auto p-4">
+      <nav className={` ${isScroll == true ? "py-2" : "py-5"} transition-[padding] duration-500 bg-slate-100 border-gray-200  cursor-pointer fixed  top-0 left-0 z-10 right-0 mb-6`}>
+        <div className="max-w-screen-xl  flex flex-wrap items-center px-2 justify-between  mx-auto">
           
             <Link
               to="/home"
-              className="flex items-center w-[20%] space-x-3 rtl:space-x-reverse"
+              className="flex items-center lg:w-[20%]  space-x-3 rtl:space-x-reverse"
             >
               <img src={logo} className="h-8 " alt="Flowbite Logo" />
             </Link>
@@ -191,7 +191,7 @@ export default function Navbar() {
                       {" "}
                       <i className="fa-solid fa-heart text-3xl relative mt-5 lg:mt-0  ">
                         {" "}
-                        <span className="text-[10px] text-white  -top-5    absolute bg-[#4FA74F] px-3 rounded-md left-3   ">
+                        <span className="text-[10px] text-white  -top-4    absolute bg-[#4FA74F] px-3 rounded-md left-3   ">
                           {wishCount}
                         </span>{" "}
                       </i>{" "}

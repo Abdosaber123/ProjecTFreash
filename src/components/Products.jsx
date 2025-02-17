@@ -31,7 +31,7 @@ export default function Products() {
       <div className="flex mt-3 justify-center ">
         <input
           onChange={(e) => setSearch(e.target.value)}
-          className=" mt-28 w-[50%] rounded-2xl"
+          className=" mt-28 sm:w-[80%]  rounded-2xl"
           placeholder="Search..."
           type="text"
         />

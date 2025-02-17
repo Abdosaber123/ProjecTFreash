@@ -31,7 +31,7 @@ export default function HomeProducts() {
     if(errorMsg){
         return <h2>  {errorMsg} </h2>
     }
-    console.log(search);
+
     
   return (
     <div className='container '>
