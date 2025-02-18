@@ -16,9 +16,9 @@ export default function WishContextProvider({ children }) {
     function successMessage(msg) {
         toast.success(msg, {
           position: "top-right",
-          icon: "🛒",
+          icon: "❤️",
           style: {
-            background: "#51A351",
+            background: "red",
             marginTop: "20px",
             color: "white",
             fontSize: "20px",

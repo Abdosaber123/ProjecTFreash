@@ -85,8 +85,8 @@ export default function CartContextProvider({ children }) {
         setNumOfCartItems(data.numOfCartItems);
         setTotalCartPrice(data.data.totalCartPrice);
         successMessage("Product added succsessfully to your cart...");
-      })
-      .finally(() => {
+      }).catch((error)=>{
+      }).finally(() => {
         setUpdaingItem('');
       });
   }
