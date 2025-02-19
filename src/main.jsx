@@ -9,7 +9,6 @@ import App from "./App.jsx";
 import UserTokenProvider from "./components/Context/UserTokenPorvider.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-import NumItemContextProvider from "./components/Context/NumCartOfText";
 import CartContextProvider from "./components/Context/CartContext.jsx";
 import WishContextProvider from "./components/Context/WishContext.jsx";
 
@@ -18,12 +17,10 @@ createRoot(document.getElementById("root")).render(
   <UserTokenProvider>
     <WishContextProvider>
       <CartContextProvider>
-        <NumItemContextProvider>
           <QueryClientProvider client={queryClient}>
             <Toaster />
             <App />
           </QueryClientProvider>
-        </NumItemContextProvider>
       </CartContextProvider>
     </WishContextProvider>
   </UserTokenProvider>

@@ -29,11 +29,11 @@ export default function App() {
     {
       path: '/', element: <Layout></Layout>, children: [
         { path: '/home', element:<Gardcomponent><Home></Home></Gardcomponent> },
-        { index: true, element: <Suspense fallback={<Loading></Loading>}><Login></Login></Suspense> },
-        { path: '/gatagores', element: <Suspense fallback={<Loading></Loading>}><Gardcomponent><GategoresPage></GategoresPage></Gardcomponent></Suspense> },
+        { index: true, element: <Login></Login> },
+        { path: '/gatagores', element: <Gardcomponent><GategoresPage></GategoresPage></Gardcomponent> },
         { path: '/products', element: <Products></Products> },
         { path: '/productsdetails/:id/:catid/', element: <Gardcomponent><ProductsDetails></ProductsDetails></Gardcomponent> },
-        { path: '/prands', element: <Suspense fallback={<Loading></Loading>}> <Gardcomponent><Brand></Brand></Gardcomponent> </Suspense> },
+        { path: '/prands', element:  <Gardcomponent><Brand></Brand></Gardcomponent>  },
         { path: '/register', element: <Register></Register> },
         { path: '/cart', element: <Gardcomponent><Cart></Cart></Gardcomponent> },
         { path: '*', element: <Notfound></Notfound> },

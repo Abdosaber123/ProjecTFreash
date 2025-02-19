@@ -88,7 +88,7 @@ export default function WishContextProvider({ children }) {
         if ((wishId == null || Wish == null) && token?.length > 10) {
             getWish();
         }
-    }, [wishId]);
+    }, [wishId , token ]);
     return (
         <wishContext.Provider value={{
             Wish,

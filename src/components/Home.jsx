@@ -8,15 +8,8 @@ import { useNavigate } from 'react-router-dom'
 import { userToken } from './Context/UserTokenPorvider';
 
 export default function Home() {
-  let {isLogin} = useContext(userToken)
-  let navi = useNavigate()
-  if(isLogin == null){
-    navi('/')
-  }
-
-  
-  
-  
+ 
+ 
   return (
     <div className=' py-20'>
       <Helmet>

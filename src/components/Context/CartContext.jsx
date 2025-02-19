@@ -131,7 +131,7 @@ export default function CartContextProvider({ children }) {
     if ((cartId == null || cart == null) && isLogin?.length > 10) {
       getCart();
     }
-  }, [cartId]);
+  }, [cartId , isLogin]);
 
   return (
     <CartContext.Provider

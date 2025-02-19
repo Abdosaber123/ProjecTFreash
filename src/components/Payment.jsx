@@ -30,7 +30,7 @@ export default function Payment() {
   })
   return (
     <div className="container">
-      <div className="paymentPage">
+      <div className="paymentPage flex h-screen lg:h-[700px] items-center justify-center flex-col">
         <motion.div
         // initial={{ opacity: 0, scale: 0 }}
         // animate={{ opacity: 1, scale: 1 }}
@@ -43,19 +43,21 @@ export default function Payment() {
           <form onSubmit={Formik.handleSubmit}>
             <div className="flex flex-col">
               <label className='mb-1' for='details'>Details:</label>
-              <input type="text" value={Formik.values.details} onChange={Formik.handleChange} id='details' />
+              <input className='rounded-2xl md:w-[500px]' type="text" value={Formik.values.details} onChange={Formik.handleChange} id='details' />
             </div>
             <div className="mt-5 flex flex-col">
               <label className='mb-1' for='city'>city:</label>
-              <input type="text" value={Formik.values.city} onChange={Formik.handleChange} id='city' />
+              <input className='rounded-2xl' type="text" value={Formik.values.city} onChange={Formik.handleChange} id='city' />
             </div>
 
             <div className="mt-5 flex flex-col">
               <label className='mb-1' for='phone'>phone:</label>
 
-              <input type="number" value={Formik.values.phone} onChange={Formik.handleChange} id='phone' />
+              <input className='rounded-2xl' type="number" value={Formik.values.phone} onChange={Formik.handleChange} id='phone' />
             </div>
+            <div className="flex justify-center">
             <button type='text' className='p-3 bg-green-600 rounded-2xl mt-4'>Submit</button>
+            </div>
           </form>
         </motion.div>
       </div>
